@@ -118,7 +118,6 @@ class EntrotwoController extends Controller
 
     public function project_view()
     {
-
         $data = ProjectsModel::where('user_id', Auth::user()->id)->paginate(6);
         return view('user.entra.project_view', ['data' => $data]);
     }

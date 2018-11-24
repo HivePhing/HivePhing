@@ -19,7 +19,7 @@
                     <div class="top_m" style="">
                         <div class="col-xs-4  col-sm-4 col-md-4"><a href="{{url('about_us')}}"
                                                                     style="text-align: center;white-space: nowrap;color:white;font-weight:bolder;">About
-                                US </a></div>
+                                Us </a></div>
                         <div class="col-xs-4  col-sm-4 col-md-4" ><a href="{{url('business_news')}}"
                                                                     style="text-align: center;white-space: nowrap;color:white;font-weight:bolder;">News</a>
                         </div>
@@ -74,6 +74,7 @@
                     }
                 @endphp
                 <a href="{{url($link)}}">Company</a>
+                <a href="{{url('entra/upload_project')}}">Upload Project</a>
                 <a href="{{url('entra/add_form_for_paint')}}">Prices</a>
                 <a href="{{url('entra/construct_projects')}}">Construct Projects</a>
                 {{--<div class="dropdowns">--}}

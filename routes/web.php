@@ -102,8 +102,12 @@ Route::group(['prefix' => 'entra'], function () {
 
 
 //end portfolio
+        //Ki Ki
+    Route::get('upload_project','UploadprojectController@upload_project');
+    Route::post('upload_project','UploadprojectController@upload_project2');
+    Route::get('view_project','UploadprojectController@view_project');
 
-
+////////////////////////////////////////////////////////////////////////////////////
 
     Route::get('construct_send_mail/{pid}','ConstructprojectsController@send_message_form');
     Route::get('construct_mail_view/{mid}','ConstructprojectsController@construct_message_view');

@@ -633,4 +633,10 @@ class EntroController extends Controller
     }
 
 
+    public function upload_project()
+    {
+        return view('upload_project');
+    }
+
+
 }
