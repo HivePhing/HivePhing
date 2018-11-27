@@ -6,12 +6,6 @@
                  <!--img src="{{asset('img/find_user.png')}}" class="user-image img-responsive"/-->
         </li>
 
-        <li>
-             <a href="#">
-                 <?php echo "Today is " . date("d-m-Y"); ?>
-             </a>
-        </li>
-
          @if(auth()->guard('admin')->user()->role=='admin')
          <li>
              <a  href="{{url('adminDashboard')}}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
@@ -56,17 +50,6 @@
              <a  href="{{url('businesshub')}}"><i class="fa fa-sitemap" aria-hidden="true" style="font-size:35px;"></i>
                Business Hub </a>
          </li>
-
-         {{--<li>--}}
-             {{--<a  href="{{url('news')}}"><i class="fa fa-rss" aria-hidden="true" style="font-size:35px;"></i>--}}
-               {{--News</a>--}}
-         {{--</li>--}}
-
-         {{--<li>--}}
-             {{--<a  href="{{url('tenders')}}"><i class="fa fa-envelope" aria-hidden="true" style="font-size:35px;"></i>--}}
-                 {{--Tenders--}}
-             {{--</a>--}}
-         {{--</li>--}}
 
          <li>
              <a  href="{{url('events')}}"><i class="fa fa-tablet" aria-hidden="true" style="font-size:35px;"></i>
@@ -125,6 +108,11 @@
          </li>
 
          @endif
+         <li>
+             <a  href="{{url('dashboard')}}"><i class="fa fa-heart" aria-hidden="true" style="font-size:35px;"></i>
+                 Dashboard
+             </a>
+         </li>
          <li>
              <a href="{{ url('pending_service') }}">
                  <i class="fa fa-paint-brush" aria-hidden="true" style="font-size: 35px"></i>

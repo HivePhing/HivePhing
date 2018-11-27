@@ -404,7 +404,27 @@ Route::post('tenders/edit/{id}', 'TenderController@update');
 
 Route::post('tenders/upload', 'TenderController@save');
 
+##KI KI###
+//dashboard
+Route::get('/dashboard','ProjectController@index');
+//all projects
+Route::get('show_all_projects','ProjectController@show_all_projects');
+Route::get('projects/detail/{id}','ProjectController@projects_detail');
+Route::get('projects/months/{id}','ProjectController@projects_by_month');
+Route::get('projects/months/project/detail/{id}','ProjectController@projects_detail');
+//confirmed projects
+Route::get('projects/confirmed','ProjectController@confirmed_projects');
+Route::get('projects/project/detail/{id}','ProjectController@projects_confirmed_detail');
+Route::get('confirmed_projects/months/{id}','ProjectController@confirmed_projects_by_month');
+Route::get('confirmed_projects/months/confirmed_projects/months/project/detail/{id}','ProjectController@projects_confirmed_detail');
+//pending projects
+Route::get('projects/pending','ProjectController@pending_projects');
+Route::get('projects/pending_detail/{id}','ProjectController@projects_pending_detail');
+Route::get('pending_projects/months/{id}','ProjectController@pending_projects_by_month');
+Route::get('pending_projects/months/pending_detail/{id}','ProjectController@projects_pending_detail');
 
+
+Route::get('/projects/projects/project/detail/{id}','ProjectController@projects_confirmed_detail');
 Route::get('events', 'EventsController@index');
 
 Route::get('events/upload', 'EventsController@upload');
@@ -619,3 +639,17 @@ Route::post('open_project','CloseprojectController@open_project');
 
 
 //end portfolio
+
+
+Route::get('/aa',function ()
+{
+    $numbers_of_projects= DB::connection('mysql_service')->table('for_repair')->count();
+    $numbers_of_project= DB::connection('mysql_service')->table('for_repair')->get();
+    var_dump($numbers_of_projects);$i = 0;
+    foreach($numbers_of_project as $a)
+    {
+        $i++;
+        echo "<br>".$i." id :".$a->id." name :".$a->name;
+    }
+});
+

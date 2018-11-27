@@ -16,9 +16,7 @@
             <p class="alert alert-success">{{session('update')}}</p>
         @endif
 
-
-
-        <div class="row">
+           <div class="row">
             <div class="col-md-12">
                 <!-- Advanced Tables -->
                 <div class="panel panel-primary">
