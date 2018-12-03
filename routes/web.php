@@ -385,7 +385,6 @@ Route::post('/add_register_fee', 'RegisterfeeController@add_fee');
 Route::get('/plans', 'PlansController@index');
 Route::get('/plan/view/{id}', 'PlansController@view');
 Route::get('/plan/edit/{id}', 'PlansController@edit_plan_form');
-
 Route::get('/plans_detail/view/{id}', 'PlansController@detail');
 Route::get('/add_plan', 'PlansController@add_plan_form');
 Route::post('/add_plan', 'PlansController@add_plan');
@@ -638,18 +637,8 @@ Route::post('open_project','CloseprojectController@open_project');
 
 
 
-//end portfolio
 
 
-Route::get('/aa',function ()
-{
-    $numbers_of_projects= DB::connection('mysql_service')->table('for_repair')->count();
-    $numbers_of_project= DB::connection('mysql_service')->table('for_repair')->get();
-    var_dump($numbers_of_projects);$i = 0;
-    foreach($numbers_of_project as $a)
-    {
-        $i++;
-        echo "<br>".$i." id :".$a->id." name :".$a->name;
-    }
-});
+Route::post('store_token','FirebasemessageController@store_token');
+//endnoti
 

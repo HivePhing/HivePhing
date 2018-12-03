@@ -84,5 +84,60 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+
+    <script>
+
+        // Initialize Firebase
+        // TODO: Replace with your project's customized code snippet
+        var config = {
+            apiKey: "AIzaSyBqx_3zrr1VHyv7UjLDD4EYKPK9ujGbWqQ",
+            authDomain: "hivephing-6589f.firebaseapp.com",
+            databaseURL: "https://hivephing-6589f.firebaseio.com",
+            projectId: "hivephing-6589f",
+            storageBucket: "hivephing-6589f.appspot.com",
+            messagingSenderId: "303951752448",
+        };
+        firebase.initializeApp(config);
+
+        messaging = firebase.messaging();
+        messaging.usePublicVapidKey('BHukpDQk_W_mBxXd1vekcQXVpjWm99ToopRdcp8X4AekrIakuAMRAeP1Ns7JsFiPui_PT-2Bdj1ZpUywEtmsxK0');
+
+        messaging.requestPermission().then(function() {
+            console.log('Notification permission granted.');
+            // TODO(developer): Retrieve an Instance ID token for use with FCM.
+            messaging.getToken().then(function(currentToken) {
+                if (currentToken) {
+                    console.log('token'+currentToken);
+                    $.post("http://localhost/companiesgit/store_token",{token:currentToken},function(data,status){
+                        console.log(data.data);
+                    });
+
+                } else {
+                    // Show permission request.
+                    console.log('No Instance ID token available. Request permission to generate one.');
+                    // Show permission UI.
+                    updateUIForPushPermissionRequired();
+                    setTokenSentToServer(false);
+                }
+            }).catch(function(err) {
+
+            });
+            // ...
+        }).catch(function(err) {
+            console.log('Unable to get permission to notify.', err);
+        });
+        messaging.onMessage(function(payload) {
+            console.log('Message received. ', payload.notification.body);
+            // [START_EXCLUDE]
+            // Update the UI to include the received message.
+            // [END_EXCLUDE]
+        });
+
+
+
+
+    </script>
+
 </body>
 </html>
