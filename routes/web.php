@@ -640,5 +640,7 @@ Route::post('open_project','CloseprojectController@open_project');
 
 
 Route::post('store_token','FirebasemessageController@store_token');
-//endnoti
+
+
+Route::get('send_noti','FirebasemessageController@sendnoti');
 

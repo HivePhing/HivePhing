@@ -11,6 +11,7 @@
                     <h3 class="" style="font-weight:bolder;color:white;font-size:33px;margin-top:-12px;">
                         HivePhing </h3>
 
+
                 </div>
             </div>
             <div class="col-xs-12 col-sm-10 col-md-10">
@@ -102,6 +103,9 @@
 
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
             </div>
+            <div class="row">
+
+            </div>
             <script>
                 function myFunction() {
                     var x = document.getElementById("myTopnav");
@@ -110,8 +114,7 @@
                     } else {
                         x.className = "topnavs";
                     }
-                }
-                ;
+                };
             </script>
         </div>
 
