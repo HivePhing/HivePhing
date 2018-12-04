@@ -155,6 +155,37 @@
                                                      </span>
                                 @endif
                             </div>
+
+                            <div class="form-group {{ $errors->has('photo1') ? ' has-error' : '' }}">
+                                <label class="control-label col-md-3">Photo
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-md-4">
+
+                                    <input type="file" name='photo1' id="exampleInputFile1">
+                                </div>
+                                @if ($errors->has('photo1'))
+                                    <span class="help-block">
+                                                    <strong>{{ $errors->first('photo1') }}</strong>
+                                                     </span>
+                                @endif
+                            </div>
+
+
+                            <div class="form-group {{ $errors->has('photo2') ? ' has-error' : '' }}">
+                                <label class="control-label col-md-3">Photo
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-md-4">
+
+                                    <input type="file" name='photo2' id="exampleInputFile1">
+                                </div>
+                                @if ($errors->has('photo2'))
+                                    <span class="help-block">
+                                                    <strong>{{ $errors->first('photo2') }}</strong>
+                                                     </span>
+                                @endif
+                            </div>
                             <div class="form-actions">
                                 <div class="row">
                                     <div class="col-md-offset-3 col-md-9">

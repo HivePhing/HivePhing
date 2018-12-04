@@ -68,6 +68,16 @@
                                 <br>
                                 <img src="{{url('/public/users/entro/photo/portfolio/'.$d->photo)}}" width="192" height="100"
                                      style=" vertical-align: text-top;float:left;margin:9px;" />
+                                @if($d->photo1 != NULL)
+
+                                    <img src="{{url('/public/users/entro/photo/portfolio/'.$d->photo1)}}" width="192" height="100"
+                                         style=" vertical-align: text-top;float:left;margin:9px;" />
+                                @endif
+                                @if($d->photo2 != NULL)
+
+                                    <img src="{{url('/public/users/entro/photo/portfolio/'.$d->photo2)}}" width="192" height="100"
+                                         style=" vertical-align: text-top;float:left;margin:9px;" />
+                                @endif
                                 {!! $d->description !!}
                             </div>
                             <strong style="color:#67809f;" >Address:</strong >{{$d->address}}

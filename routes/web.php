@@ -178,7 +178,7 @@ Route::group(['prefix' => 'entra'], function () {
     Route::get('view_mail/{id}','EntramailController@view_mails');
 
     //end plan
-    
+
     //send mail for project
 
     Route::get('send_mail_for_project/{project_id}', 'ProjectmailController@send_mail_form');

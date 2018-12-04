@@ -372,7 +372,7 @@
                     <div class="col-md-12">
                         <div class="form-group {{ $errors->has('photo') ? ' has-error' : '' }}">
                             <label class="col-md-3 control-label input-title f_label">
-                               Photo
+                                Photo
                             </label>
 
                             <input type="file" class="form-control f" name="photo"
@@ -384,6 +384,38 @@
                             @endif
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <div class="form-group {{ $errors->has('photo1') ? ' has-error' : '' }}">
+                            <label class="col-md-3 control-label input-title f_label">
+                                Photo
+                            </label>
+
+                            <input type="file" class="form-control f" name="photo1"
+                                   placeholder="Photo" value="{{old('photo1')}}">
+                            @if ($errors->has('photo1'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('photo1') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group {{ $errors->has('photo2') ? ' has-error' : '' }}">
+                            <label class="col-md-3 control-label input-title f_label">
+                                Photo
+                            </label>
+
+                            <input type="file" class="form-control f" name="photo2"
+                                   placeholder="Photo" value="{{old('photo2')}}">
+                            @if ($errors->has('photo2'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('photo2') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="col-sm-2 col-md-4">

@@ -87,16 +87,8 @@
 
                     {{--</div>--}}
                 {{--</div>--}}
-                <div class="dropdowns">
-                    <button class="dropbtns">Activities
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdowns-content">
-                        <a href="{{url('entra/entra_activities')}}">Your Activities</a>
-                        <a href="{{url('entra/create_activity')}}">Create New Activity</a>
+                <a href="{{url('entra/portfolio/list')}}">Portfolio</a>
 
-                    </div>
-                </div>
                 <a href="{{url('see_tenders')}}">Tenders</a>
                 <a href="{{url('entra/show_plans')}}">Plans</a>
 
