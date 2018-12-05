@@ -87,11 +87,10 @@
 
                     {{--</div>--}}
                 {{--</div>--}}
-                <a href="{{url('entra/portfolio/list')}}">Portfolio</a>
 
+                <a href="{{url('entra/portfolio/list')}}">Portfolio</a>
                 <a href="{{url('see_tenders')}}">Tenders</a>
                 <a href="{{url('entra/show_plans')}}">Plans</a>
-
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
             </div>
             <script>

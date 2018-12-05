@@ -60,26 +60,33 @@
                             @endif
 
                         </div >
-                        <div class="portlet-body" >
+                        <div class="portlet-body" style="overflow: auto; heigtht:221px;" >
                             <div class="scroller" style="height:200px" data-rail-visible="1"
                                  data-rail-color="yellow"
                                  data-handle-color="#a1b2bd" >
                                 <strong >{{$d->project_name}}</strong >
                                 <br>
-                                <img src="{{url('/public/users/entro/photo/portfolio/'.$d->photo)}}" width="192" height="100"
-                                     style=" vertical-align: text-top;float:left;margin:9px;" />
+                                <div style="width:100%;">
+                                <img src="{{url('/public/users/entro/photo/portfolio/'.$d->photo)}}"
+                                     style=" vertical-align: text-top;float:left;margin:9px; width:30%;" />
                                 @if($d->photo1 != NULL)
 
-                                    <img src="{{url('/public/users/entro/photo/portfolio/'.$d->photo1)}}" width="192" height="100"
-                                         style=" vertical-align: text-top;float:left;margin:9px;" />
+                                    <img src="{{url('/public/users/entro/photo/portfolio/'.$d->photo1)}}"
+                                         style=" vertical-align: text-top;float:left;margin:9px;; width:30%;" />
                                 @endif
                                 @if($d->photo2 != NULL)
 
                                     <img src="{{url('/public/users/entro/photo/portfolio/'.$d->photo2)}}" width="192" height="100"
-                                         style=" vertical-align: text-top;float:left;margin:9px;" />
+                                         style=" vertical-align: text-top;float:left;margin:9px;; width:30%;" />
                                 @endif
-                                {!! $d->description !!}
+                                </div>
+                                <br>
                             </div>
+                            <div style="height:92px;overflow:auto;">
+                            {!! $d->description !!}
+
+                            </div>
+
                             <strong style="color:#67809f;" >Address:</strong >{{$d->address}}
                             <br>
 
