@@ -371,6 +371,25 @@
     </style>
 </head>
 <body style="background:#2e4765;" id="cf">
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 @yield('body')
 </body>
@@ -557,14 +576,10 @@
 </script>
 @yield('js')
 <!-- Google Code for Universal Analytics -->
-
-
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
-
+{{--<script src="http://localhost/comreal/HivePhing/resources/views/layouts/firebase-messaging-sw.js"></script>--}}
 <script>
-
-    // Initialize Firebase
     // TODO: Replace with your project's customized code snippet
     var config = {
         apiKey: "AIzaSyBqx_3zrr1VHyv7UjLDD4EYKPK9ujGbWqQ",
@@ -584,10 +599,7 @@
         // TODO(developer): Retrieve an Instance ID token for use with FCM.
         messaging.getToken().then(function(currentToken) {
             if (currentToken) {
-                console.log('token'+currentToken);
-                $.post("http://localhost/companiesgit/store_token",{token:currentToken},function(data,status){
-                    console.log(data.data);
-                });
+                console.log(currentToken);
 
             } else {
                 // Show permission request.
@@ -597,22 +609,23 @@
                 setTokenSentToServer(false);
             }
         }).catch(function(err) {
-
         });
         // ...
-    }).catch(function(err) {
+        }).catch(function(err) {
         console.log('Unable to get permission to notify.', err);
     });
     messaging.onMessage(function(payload) {
-        console.log('Message received. ', payload.notification.body);
+        console.log('Message received.', payload.notification.body);
+        console.log('Message received.', payload.data.post_id);
+        $.post("http://localhost/comreal/HivePhing/store_fcm",{user_token: payload.data.user_token,post_id:payload.data.post_id}, function(data, status){
+            console.log(data);
+        });
+        $(".modal-title").html(payload.notification.title);
+        $(".modal-body").html(payload.data.post_id);
+        $("#myModal").modal();
         // [START_EXCLUDE]
         // Update the UI to include the received message.
         // [END_EXCLUDE]
     });
-
-
-
-
 </script>
-
 </html>

