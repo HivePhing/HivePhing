@@ -116,8 +116,13 @@ class ConfirmserviceController extends FirebasehelperController
 
 
         $get_com = DB::table('company')->where([['business_hub', '=', $fr], ['city_id', '=', $get_project_data->city]])->get();
-        $send_user_token=['cxazY5DQbTI:APA91bEfG487MjtLbIyLuiTvQR60h4CtDKUAEe9QRkklwmkh2tVoflb1DJDd4XKC2nBOwlGytYvbgomrAyFAIvPGGd53Kx7axwV1kA2EKj8iWkhM_kyiVnqNVsIXnscoyayKkT49Fnap'];
+        $send_user_token = ['e8ynnXytKfs:APA91bEm4FlKQH_QGFJHUwGHVz6n-LL30fkCEZ_ZuOx_QsCVrEck_4A4ZAw1rn7t-X59FkT1Pe5AUK4TXAJncE0ub3oAuLHZOSWanOzTMrKDhErnUSCde6treZMPdMI7955_V35F6Vio'];
         foreach ($get_com as $gc) {
+
+//
+//            FirebasehelperController::store_firebase_data($ptitle = $get_project_data->name, $status = 'unread', $user_id = $gc->user_id, $date = $get_project_data->created_at, $project_id = $get_project_data->id, $project_description = 'Testing TestingTestingTestingTestingTestingTesting');
+//            FirebasehelperController::store_firebase_data($ptitle= $get_project_data->name,$user_id=,$date=Carbon::now(),$project_id='33',$project_description='effefefefe',$status='unread');
+
 
 //            if (Mail::to($gc->email)->send(new Mailsfunction($title, $des))) {
 //            } else {
@@ -127,16 +132,19 @@ class ConfirmserviceController extends FirebasehelperController
             //for firebase
             $check_for_firebase = FirebaseModel::where('user_id', $gc->user_id);
             if ($check_for_firebase->count() > 0) {
-               $send_user_token=$check_for_firebase->first()->token;
+                $send_user_token = $check_for_firebase->first()->token;
 
             } else {
                 continue;
             }
             //end for firebase
         }
-        if(!empty($send_user_token)) {
-            FirebasehelperController::sendnotimsg($body = 'body test', $title = $get_project_data->name, $token = $send_user_token);
-        }
+
+//        if (!empty($send_user_token)) {
+
+            FirebasehelperController::sendnotimsg($body = str_limit($get_project_data->description, '50', '...'), $title = $get_project_data->name, $token = $send_user_token,$post_id=$get_project_data->id );
+
+//        }
         return redirect('confirmed_service');
 
     }

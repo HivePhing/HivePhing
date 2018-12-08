@@ -35,7 +35,6 @@ class PlanfrontController extends Controller
         {
             return $validation->errors();
         }
-
         $already_has = Plans::where('user_id', Auth::user()->id)->count();
         if ($already_has > 0) {
             Session::flash('had_plan', 'You already have a plan');
@@ -46,9 +45,7 @@ class PlanfrontController extends Controller
             Session::flash('had_plan', 'Your banlance is not enough');
             return redirect()->back();
         }
-
         $but_not_eb = RegisterfeeModel::where('user_id', Auth::user()->id)->first();
-
         if (Auth::user()->type == 1)
         {
             if ($request->p == 'A')

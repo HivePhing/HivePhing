@@ -75,8 +75,7 @@
                                          style=" vertical-align: text-top;float:left;margin:9px;; width:30%;" />
                                 @endif
                                 @if($d->photo2 != NULL)
-
-                                    <img src="{{url('/public/users/entro/photo/portfolio/'.$d->photo2)}}" width="192" height="100"
+                                    <img src="{{url('/public/users/entro/photo/portfolio/'.$d->photo2)}}"
                                          style=" vertical-align: text-top;float:left;margin:9px;; width:30%;" />
                                 @endif
                                 </div>
