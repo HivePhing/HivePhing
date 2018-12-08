@@ -408,12 +408,14 @@ Route::post('tenders/upload', 'TenderController@save');
 Route::get('/dashboard','ProjectController@index');
 //all projects
 Route::get('show_all_projects','ProjectController@show_all_projects');
-Route::get('projects/detail/{id}','ProjectController@projects_detail');
 Route::get('projects/months/{id}','ProjectController@projects_by_month');
-Route::get('projects/months/project/detail/{id}','ProjectController@projects_detail');
+Route::get('projects/detail/{id}','ProjectController@projects_detail');
+Route::get('projects/project/detail/{id}','ProjectController@projects_by_month');
+Route::get('projects/months/show_detail/{id}','ProjectController@projects_detail');
+Route::get('show_detail/{id}','ProjectController@projects_detail');
+Route::get('/projects/project/detail/show_detail/{id}','ProjectController@projects_detail');
 //confirmed projects
 Route::get('projects/confirmed','ProjectController@confirmed_projects');
-Route::get('projects/project/detail/{id}','ProjectController@projects_confirmed_detail');
 Route::get('confirmed_projects/months/{id}','ProjectController@confirmed_projects_by_month');
 Route::get('confirmed_projects/months/confirmed_projects/months/project/detail/{id}','ProjectController@projects_confirmed_detail');
 //pending projects

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title')</title>
     <!-- BOOTSTRAP STYLES-->
-      <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" />
+      <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
        <!-- FONTAWESOME STYLES-->
       <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" />
        <!-- MORRIS CHART STYLES-->

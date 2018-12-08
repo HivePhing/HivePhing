@@ -74,6 +74,7 @@ class ProjectController extends Controller
     {
         $detail =DB::connection('mysql_service')
             ->table('for_repair')
+            ->where([['confirm', '=', 'confirmed']])
             ->whereMonth('created_at', $id)
             ->get();
         return view('projects.show_monthly_confirmed_projects', compact('detail'));
