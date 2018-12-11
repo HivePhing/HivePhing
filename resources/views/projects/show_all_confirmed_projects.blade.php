@@ -142,9 +142,14 @@
         <div class="navbar1">
             <a href="{{url('projects/confirmed')}}">Show All Confirmed Projects</a>
             <div class="dropdown1">
-                <button class="dropbtn1">By Months
-                    <i class="fa fa-caret-down"></i>
-                </button>
+                    <div class="notification100">
+                            <button class="dropbtn1">
+                                    <i class="fa fa-bell"></i>
+                                </button>
+                          
+                            <span class="badge1">3</span>
+                    </div>
+               
                 <div class="dropdown-content1">
                     <a href="{{url('confirmed_projects/months/01')}}">January</a>
                     <a href="{{url('confirmed_projects/months/02')}}">February</a>

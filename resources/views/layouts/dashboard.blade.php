@@ -1,6 +1,74 @@
 @extends('layouts.plane')
 
 @section('body')
+<style>
+.dropdown {
+    display:inline-block;
+    margin-left:20px;
+    padding:10px;
+    background-color: #ffffff;
+    border-radius: 50% !important;
+  }
+
+.notifications {
+   min-width:420px;
+  }
+  
+.notifications-wrapper {
+     overflow:auto;
+      max-height:250px;  
+    }
+    
+.menu-title {
+     color:#ff7788;
+     font-size:1.5rem;
+      display:inline-block;
+
+      }
+      
+
+.notification-heading, .notification-footer  {
+ 	padding:2px 10px;
+       }
+      
+        
+/* .dropdown-menu .divider { 
+  margin:8px -458px 0;
+  right: 52px;
+  }
+*/
+.dropdown-menu.divider {
+  margin:5px 0;          
+  }
+.item-title {
+ font-size:1.3rem;
+ color:#000;
+}
+
+.notifications a.content {
+ text-decoration:none;
+ background:#ccc; 
+ }
+    
+.notification-item {
+ padding:10px;
+ margin:5px;
+ background:#ccc;
+ border-radius:4px;
+ }
+
+ .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: #7ee4ec;
+  color: red;
+  font-weight: bold;
+}
+
+        </style>
     <div class="clearfix"></div>
     <div class="">
 
@@ -10,24 +78,62 @@
                     <img src="{{asset('images/logo/logo.png')}}" class="logo" style="width:152px;height:82px;"/>
                     <h3 class="" style="font-weight:bolder;color:white;font-size:33px;margin-top:-12px;">
                         HivePhing </h3>
-
-
                 </div>
             </div>
             <div class="col-xs-12 col-sm-10 col-md-10">
-                <div class="col-xs-12 col-sm-12 col-md-2">&nbsp;</div>
-                <div class="col-xs-12 col-sm-12 col-md-8" style="color:white;text-align: center;">
-                    <div class="top_m" style="">
+                <div class="col-xs-12 col-sm-12 col-md-10" style="color:white;text-align: center;">
+                    <div class="top_m col-md-6" style="">
+                        <div class="col-xs-4  col-sm-4 col-md-4">
+                        <div class="dropdown">
+                            <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                              <i class="icon-bell"></i>
+                              <span class="badge">3</span>
+                            </a>
+                            <div  class="dropdown-menu notifications">
+                            <ul role="menu" aria-labelledby="dLabel">
+                              <div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all</h4>
+                              </div>
+                              <li class="divider"></li>
+                             <div class="notifications-wrapper">
+                               <a class="content" href="#">
+                                 <div class="notification-item">
+                                  <h4 class="item-title">ေခါင္းစဥ္</h4>
+                                  <p class="item-info">စာသားနဲနဲ စာသားနဲနဲ စာသားနဲနဲ စာသားနဲနဲ</p>
+                                  <button>View</button>
+                                </div>
+                              </a>
+                               <a class="content" href="#">
+                                <div class="notification-item">
+                                  <h4 class="item-title">Title</h4>
+                                  <p class="item-info">A little Sar A little Sar A little Sar A little Sar</p>
+                                  <button>View</button>
+                                </div>
+                              </a>
+                               <a class="content" href="#">
+                                <div class="notification-item">
+                                  <h4 class="item-title">Title</h4>
+                                  <p class="item-info">စာသားနည္းနည္း စာသားနည္းနည္း စာသားနည္းနည္း စာသားနည္းနည္း </p>
+                                </div>
+                              </a>
+                             </div>
+                              <li class="divider"></li>
+                              <div class="notification-footer"><h4 class="menu-title">View all</i></h4></div>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
                         <div class="col-xs-4  col-sm-4 col-md-4"><a href="{{url('about_us')}}"
                                                                     style="text-align: center;white-space: nowrap;color:white;font-weight:bolder;">About
-                                Us </a></div>
-                        <div class="col-xs-4  col-sm-4 col-md-4" ><a href="{{url('business_news')}}"
+                                Us </a>
+                       <a href="{{url('business_news')}}"
                                                                     style="text-align: center;white-space: nowrap;color:white;font-weight:bolder;">News</a>
                         </div>
                         <div class="col-xs-4">
                             <button onclick="change_font('z')" class="btn btn-small btn-info " style="float:right;">zawgyi</button>
-                            <button onclick="change_font('u')" class="btn btn-small btn-warning green">Uni</button>
+                            <button onclick="change_font('u')" class="btn btn-small btn-warning green">Unicode</button>
                         </div>
+
+                      
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-2">&nbsp;</div>
