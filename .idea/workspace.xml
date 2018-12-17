@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97d67009-193f-4df6-98c8-98cadbebc246" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/user/entra/invite_com.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/user/entra/invite_project_detail.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/user/entra/detail_project_without_request.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ConstructprojectsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConstructprojectsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/data_dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/data_dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/entra/company_detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/entra/company_detail.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/entra/construct_project_detail_one.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/entra/construct_project_detail_one.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/entra/construct_projects.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/entra/construct_projects.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,31 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="company_detail.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="company_detail.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/user/entra/company_detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
+            <state relative-caret-position="340">
               <caret line="44" column="48" lean-forward="false" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plane.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/plane.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="145" column="23" lean-forward="true" selection-start-line="145" selection-start-column="23" selection-end-line="145" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="620" column="44" lean-forward="false" selection-start-line="620" selection-start-column="44" selection-end-line="620" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -100,8 +78,55 @@
       <file leaf-file-name="ConstructprojectsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConstructprojectsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="443" column="53" lean-forward="false" selection-start-line="443" selection-start-column="53" selection-end-line="443" selection-end-column="53" />
+            <state relative-caret-position="170">
+              <caret line="388" column="58" lean-forward="false" selection-start-line="388" selection-start-column="58" selection-end-line="388" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail_project_without_request.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/entra/detail_project_without_request.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="148" column="14" lean-forward="true" selection-start-line="148" selection-start-column="14" selection-end-line="148" selection-end-column="14" />
+              <folding>
+                <element signature="e#326#397#0#HTML" expanded="true" />
+                <element signature="e#683#739#0#HTML" expanded="true" />
+                <element signature="e#834#946#0#HTML" expanded="true" />
+                <element signature="e#1631#1702#0#HTML" expanded="true" />
+                <element signature="e#1988#2044#0#HTML" expanded="true" />
+                <element signature="e#2139#2221#0#HTML" expanded="true" />
+                <element signature="e#2806#2857#0#HTML" expanded="true" />
+                <element signature="e#3252#3258#1#HTML" expanded="true" />
+                <element signature="e#3294#3300#1#HTML" expanded="true" />
+                <element signature="e#4515#4546#0#HTML" expanded="true" />
+                <element signature="e#4965#4985#0#HTML" expanded="true" />
+                <element signature="e#5246#5268#0#HTML" expanded="true" />
+                <element signature="e#5312#5333#0#HTML" expanded="true" />
+                <element signature="e#5504#5510#1#HTML" expanded="true" />
+                <element signature="e#5760#5766#1#HTML" expanded="true" />
+                <element signature="e#5798#5804#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="construct_projects.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/entra/construct_projects.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3961">
+              <caret line="315" column="23" lean-forward="true" selection-start-line="315" selection-start-column="23" selection-end-line="319" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="621" column="48" lean-forward="false" selection-start-line="621" selection-start-column="18" selection-end-line="621" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -120,33 +145,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="construct_project_detail_one.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="construct_project_detail_one.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/user/entra/construct_project_detail_one.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="154" column="41" lean-forward="true" selection-start-line="154" selection-start-column="41" selection-end-line="154" selection-end-column="41" />
+            <state relative-caret-position="187">
+              <caret line="89" column="18" lean-forward="true" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
               <folding>
-                <element signature="e#3191#3197#1#HTML" expanded="true" />
-                <element signature="e#3676#3682#0#HTML" expanded="true" />
-                <element signature="e#3682#3688#0#HTML" expanded="true" />
-                <element signature="e#3688#3694#0#HTML" expanded="true" />
-                <element signature="e#3694#3700#0#HTML" expanded="true" />
-                <element signature="e#3790#3796#0#HTML" expanded="true" />
+                <element signature="e#321#392#0#HTML" expanded="true" />
+                <element signature="e#678#734#0#HTML" expanded="true" />
+                <element signature="e#829#911#0#HTML" expanded="true" />
+                <element signature="e#1596#1667#0#HTML" expanded="true" />
+                <element signature="e#1953#2009#0#HTML" expanded="true" />
+                <element signature="e#2104#2186#0#HTML" expanded="true" />
+                <element signature="e#2770#2821#0#HTML" expanded="true" />
+                <element signature="e#3162#3168#1#HTML" expanded="true" />
+                <element signature="e#3192#3198#1#HTML" expanded="true" />
+                <element signature="e#3222#3228#1#HTML" expanded="true" />
+                <element signature="e#3252#3258#1#HTML" expanded="true" />
                 <element signature="e#3796#3802#0#HTML" expanded="true" />
                 <element signature="e#3802#3808#0#HTML" expanded="true" />
                 <element signature="e#3808#3814#0#HTML" expanded="true" />
-                <element signature="e#4204#4210#0#HTML" expanded="true" />
-                <element signature="e#4210#4216#0#HTML" expanded="true" />
-                <element signature="e#4216#4222#0#HTML" expanded="true" />
-                <element signature="e#4222#4228#0#HTML" expanded="true" />
-                <element signature="e#4362#4368#0#HTML" expanded="true" />
-                <element signature="e#4368#4374#0#HTML" expanded="true" />
-                <element signature="e#4374#4380#0#HTML" expanded="true" />
-                <element signature="e#4380#4386#0#HTML" expanded="true" />
-                <element signature="e#4480#4486#0#HTML" expanded="true" />
-                <element signature="e#4486#4492#0#HTML" expanded="true" />
-                <element signature="e#4492#4498#0#HTML" expanded="true" />
-                <element signature="e#4498#4504#0#HTML" expanded="true" />
+                <element signature="e#3814#3820#0#HTML" expanded="true" />
+                <element signature="e#3910#3916#0#HTML" expanded="true" />
+                <element signature="e#3916#3922#0#HTML" expanded="true" />
+                <element signature="e#3922#3928#0#HTML" expanded="true" />
+                <element signature="e#3928#3934#0#HTML" expanded="true" />
+                <element signature="e#4324#4330#0#HTML" expanded="true" />
+                <element signature="e#4330#4336#0#HTML" expanded="true" />
+                <element signature="e#4336#4342#0#HTML" expanded="true" />
+                <element signature="e#4342#4348#0#HTML" expanded="true" />
+                <element signature="e#4482#4488#0#HTML" expanded="true" />
+                <element signature="e#4488#4494#0#HTML" expanded="true" />
+                <element signature="e#4494#4500#0#HTML" expanded="true" />
+                <element signature="e#4500#4506#0#HTML" expanded="true" />
+                <element signature="e#4600#4606#0#HTML" expanded="true" />
+                <element signature="e#4606#4612#0#HTML" expanded="true" />
+                <element signature="e#4612#4618#0#HTML" expanded="true" />
+                <element signature="e#4618#4624#0#HTML" expanded="true" />
+                <element signature="e#5344#5375#0#HTML" expanded="true" />
+                <element signature="e#5790#5810#0#HTML" expanded="true" />
+                <element signature="e#6074#6096#0#HTML" expanded="true" />
+                <element signature="e#6144#6165#0#HTML" expanded="true" />
+                <element signature="e#6339#6345#1#HTML" expanded="true" />
+                <element signature="e#6626#6632#1#HTML" expanded="true" />
+                <element signature="e#6668#6674#1#HTML" expanded="true" />
+                <element signature="e#6710#6716#1#HTML" expanded="true" />
+                <element signature="e#6752#6758#1#HTML" expanded="true" />
+                <element signature="e#7365#7371#1#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,7 +201,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/user/entra/invite_project_detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="5" />
+              <caret line="4" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="202" selection-end-column="11" />
               <folding>
                 <element signature="e#326#397#0#HTML" expanded="true" />
                 <element signature="e#683#739#0#HTML" expanded="true" />
@@ -183,18 +228,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="construct_project_detail.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/user/entra/construct_project_detail.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-548">
-              <caret line="145" column="34" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="396" selection-end-column="11" />
-              <folding>
-                <element signature="e#4732#5823#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -203,7 +236,6 @@
       <find>show_plans</find>
       <find>PlanfrontControlle0r</find>
       <find>Portfolio</find>
-      <find>logo</find>
       <find>edit</find>
       <find>Firebase</find>
       <find>links</find>
@@ -212,11 +244,13 @@
       <find>ph</find>
       <find>Download</find>
       <find>upload</find>
-      <find>message</find>
       <find>\</find>
       <find>Quotation</find>
       <find>Prices</find>
       <find>inve</find>
+      <find>logo</find>
+      <find>message</find>
+      <find>Request</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -225,7 +259,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" />
         <option value="$USER_HOME$/Downloads/complex/complex/index.html" />
         <option value="$PROJECT_DIR$/public/css/slider/style.css" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
@@ -237,7 +270,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlansController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register_one.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxGetController.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/entra/construct_projects.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/entra/construct_project_detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/entra/company_register_three.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/email/template.blade.php" />
@@ -269,13 +301,15 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/plane.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FirebasemessageController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/entra/invite_com.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/entra/construct_project_detail_one.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ConstructprojectsController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/entra/invite_project_detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/data_dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/entra/company_detail.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ConstructprojectsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/entra/detail_project_without_request.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/entra/construct_projects.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/entra/construct_project_detail_one.blade.php" />
       </list>
     </option>
   </component>
@@ -488,7 +522,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../constructback" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/xampp/htdocs/HivePhing/resources/views/user/entra/invite_project_detail.blade.php&#10;Construc&#9;FILE&#9;file://C:/xampp/htdocs/HivePhing/app/Http/Controllers/ConstructprojectsController.php&#10;web.php&#9;FILE&#9;file://C:/xampp/htdocs/comreal/HivePhing/routes/web.php&#10;Firebasemod&#9;null&#9;null&#10;FirebaseModel&#9;null&#9;null&#10;plan_li&#9;FILE&#9;file://C:/xampp/htdocs/comreal/HivePhing/resources/views/user/entra/plan/plan_list.blade.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/companiesgit/routes/web.php&#10;Firebase&#9;null&#9;null&#10;construc&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/ConstructprojectsController.php&#10;Entro&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/EntroController.php&#10;confirm&#9;null&#9;null&#10;E&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/EntraActivityController.php&#10;Port&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PortfolioController.php&#10;port&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PortfolioController.php&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/companies/routes/web.php&#10;po&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PortfolioController.php&#10;Ajaxg&#9;null&#9;null&#10;Construct&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/ConstructprojectsController.php&#10;RegisterC&#9;null&#9;null&#10;style.&#9;FILE&#9;file://C:/xampp/htdocs/companies/public/css/style.css&#10;Servic&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/ServiceController.php&#10;const&#9;FILE&#9;file://C:/xampp/htdocs/companies/resources/views/user/entra/construct_project_detail.blade.php&#10;Companyre&#9;FILE&#9;file://C:/xampp/htdocs/companies/resources/views/user/entra/company_register_one.bladess.php&#10;pr&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PriceforitemsController.php&#10;price&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PriceforitemsController.php&#10;Constru&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/ConstructprojectsController.php&#10;Constructproject&#9;null&#9;null&#10;Constr&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/ConstructplanadminController.php&#10;edit&#9;FILE&#9;file://C:/xampp/htdocs/companies/resources/views/user/entra/price/edit_form_for_paint.blade.php&#10;Price&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PriceforitemsController.php&#10;ed&#9;FILE&#9;file://C:/xampp/htdocs/companies/resources/views/user/entra/price/edit_form_for_paint.blade.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/companies/routes/web.php&#10;config/da&#9;FILE&#9;file://C:/xampp/htdocs/companies/config/database.php&#10;Priceforitems&#9;null&#9;null&#10;Operat&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file://C:/xampp/htdocs/HivePhing/routes/web.php&#10;Construc&#9;FILE&#9;file://C:/xampp/htdocs/HivePhing/app/Http/Controllers/ConstructprojectsController.php&#10;web.php&#9;FILE&#9;file://C:/xampp/htdocs/comreal/HivePhing/routes/web.php&#10;Firebasemod&#9;null&#9;null&#10;FirebaseModel&#9;null&#9;null&#10;plan_li&#9;FILE&#9;file://C:/xampp/htdocs/comreal/HivePhing/resources/views/user/entra/plan/plan_list.blade.php&#10;Firebase&#9;null&#9;null&#10;construc&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/ConstructprojectsController.php&#10;Entro&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/EntroController.php&#10;confirm&#9;null&#9;null&#10;E&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/EntraActivityController.php&#10;Port&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PortfolioController.php&#10;port&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PortfolioController.php&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/companies/routes/web.php&#10;po&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PortfolioController.php&#10;Ajaxg&#9;null&#9;null&#10;Construct&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/ConstructprojectsController.php&#10;RegisterC&#9;null&#9;null&#10;style.&#9;FILE&#9;file://C:/xampp/htdocs/companies/public/css/style.css&#10;Servic&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/ServiceController.php&#10;const&#9;FILE&#9;file://C:/xampp/htdocs/companies/resources/views/user/entra/construct_project_detail.blade.php&#10;Companyre&#9;FILE&#9;file://C:/xampp/htdocs/companies/resources/views/user/entra/company_register_one.bladess.php&#10;pr&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PriceforitemsController.php&#10;price&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PriceforitemsController.php&#10;Constru&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/ConstructprojectsController.php&#10;Constructproject&#9;null&#9;null&#10;Constr&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/ConstructplanadminController.php&#10;edit&#9;FILE&#9;file://C:/xampp/htdocs/companies/resources/views/user/entra/price/edit_form_for_paint.blade.php&#10;Price&#9;FILE&#9;file://C:/xampp/htdocs/companies/app/Http/Controllers/PriceforitemsController.php&#10;ed&#9;FILE&#9;file://C:/xampp/htdocs/companies/resources/views/user/entra/price/edit_form_for_paint.blade.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/companies/routes/web.php&#10;config/da&#9;FILE&#9;file://C:/xampp/htdocs/companies/config/database.php&#10;Priceforitems&#9;null&#9;null&#10;Operat&#9;null&#9;null" />
     <property name="nodejs_interpreter_path" value="C:/Program Files (x86)/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
@@ -622,13 +656,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/add_maincat.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-181">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompanyController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -843,14 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/entra/construct_projects.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="277" column="45" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="350" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConfirmserviceController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -869,98 +888,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="620" column="44" lean-forward="false" selection-start-line="620" selection-start-column="44" selection-end-line="620" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/entra/construct_project_detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-548">
           <caret line="145" column="34" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="396" selection-end-column="11" />
           <folding>
             <element signature="e#4732#5823#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConstructprojectsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="443" column="53" lean-forward="false" selection-start-line="443" selection-start-column="53" selection-end-line="443" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/entra/invite_com.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="e#5516#5522#0#HTML" expanded="true" />
-            <element signature="e#5522#5528#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/entra/construct_project_detail_one.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="154" column="41" lean-forward="true" selection-start-line="154" selection-start-column="41" selection-end-line="154" selection-end-column="41" />
-          <folding>
-            <element signature="e#3191#3197#1#HTML" expanded="true" />
-            <element signature="e#3676#3682#0#HTML" expanded="true" />
-            <element signature="e#3682#3688#0#HTML" expanded="true" />
-            <element signature="e#3688#3694#0#HTML" expanded="true" />
-            <element signature="e#3694#3700#0#HTML" expanded="true" />
-            <element signature="e#3790#3796#0#HTML" expanded="true" />
-            <element signature="e#3796#3802#0#HTML" expanded="true" />
-            <element signature="e#3802#3808#0#HTML" expanded="true" />
-            <element signature="e#3808#3814#0#HTML" expanded="true" />
-            <element signature="e#4204#4210#0#HTML" expanded="true" />
-            <element signature="e#4210#4216#0#HTML" expanded="true" />
-            <element signature="e#4216#4222#0#HTML" expanded="true" />
-            <element signature="e#4222#4228#0#HTML" expanded="true" />
-            <element signature="e#4362#4368#0#HTML" expanded="true" />
-            <element signature="e#4368#4374#0#HTML" expanded="true" />
-            <element signature="e#4374#4380#0#HTML" expanded="true" />
-            <element signature="e#4380#4386#0#HTML" expanded="true" />
-            <element signature="e#4480#4486#0#HTML" expanded="true" />
-            <element signature="e#4486#4492#0#HTML" expanded="true" />
-            <element signature="e#4492#4498#0#HTML" expanded="true" />
-            <element signature="e#4498#4504#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/entra/invite_project_detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="5" />
-          <folding>
-            <element signature="e#326#397#0#HTML" expanded="true" />
-            <element signature="e#683#739#0#HTML" expanded="true" />
-            <element signature="e#834#916#0#HTML" expanded="true" />
-            <element signature="e#1601#1672#0#HTML" expanded="true" />
-            <element signature="e#1958#2014#0#HTML" expanded="true" />
-            <element signature="e#2109#2191#0#HTML" expanded="true" />
-            <element signature="e#2776#2827#0#HTML" expanded="true" />
-            <element signature="e#3222#3228#1#HTML" expanded="true" />
-            <element signature="e#3264#3270#1#HTML" expanded="true" />
-            <element signature="e#4485#4516#0#HTML" expanded="true" />
-            <element signature="e#4935#4955#0#HTML" expanded="true" />
-            <element signature="e#5216#5238#0#HTML" expanded="true" />
-            <element signature="e#5282#5303#0#HTML" expanded="true" />
-            <element signature="e#5464#5486#0#HTML" expanded="true" />
-            <element signature="e#5530#5551#0#HTML" expanded="true" />
-            <element signature="e#5707#5729#0#HTML" expanded="true" />
-            <element signature="e#5773#5794#0#HTML" expanded="true" />
-            <element signature="e#5959#5965#1#HTML" expanded="true" />
-            <element signature="e#9013#9019#1#HTML" expanded="true" />
-            <element signature="e#9051#9057#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -998,9 +931,148 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/entra/company_detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
+        <state relative-caret-position="340">
           <caret line="44" column="48" lean-forward="false" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/entra/invite_com.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding>
+            <element signature="e#5516#5522#0#HTML" expanded="true" />
+            <element signature="e#5522#5528#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/entra/invite_project_detail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="202" selection-end-column="11" />
+          <folding>
+            <element signature="e#326#397#0#HTML" expanded="true" />
+            <element signature="e#683#739#0#HTML" expanded="true" />
+            <element signature="e#834#916#0#HTML" expanded="true" />
+            <element signature="e#1601#1672#0#HTML" expanded="true" />
+            <element signature="e#1958#2014#0#HTML" expanded="true" />
+            <element signature="e#2109#2191#0#HTML" expanded="true" />
+            <element signature="e#2776#2827#0#HTML" expanded="true" />
+            <element signature="e#3222#3228#1#HTML" expanded="true" />
+            <element signature="e#3264#3270#1#HTML" expanded="true" />
+            <element signature="e#4485#4516#0#HTML" expanded="true" />
+            <element signature="e#4935#4955#0#HTML" expanded="true" />
+            <element signature="e#5216#5238#0#HTML" expanded="true" />
+            <element signature="e#5282#5303#0#HTML" expanded="true" />
+            <element signature="e#5464#5486#0#HTML" expanded="true" />
+            <element signature="e#5530#5551#0#HTML" expanded="true" />
+            <element signature="e#5707#5729#0#HTML" expanded="true" />
+            <element signature="e#5773#5794#0#HTML" expanded="true" />
+            <element signature="e#5959#5965#1#HTML" expanded="true" />
+            <element signature="e#9013#9019#1#HTML" expanded="true" />
+            <element signature="e#9051#9057#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="621" column="48" lean-forward="false" selection-start-line="621" selection-start-column="18" selection-end-line="621" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConstructprojectsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="388" column="58" lean-forward="false" selection-start-line="388" selection-start-column="58" selection-end-line="388" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/entra/detail_project_without_request.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="148" column="14" lean-forward="true" selection-start-line="148" selection-start-column="14" selection-end-line="148" selection-end-column="14" />
+          <folding>
+            <element signature="e#326#397#0#HTML" expanded="true" />
+            <element signature="e#683#739#0#HTML" expanded="true" />
+            <element signature="e#834#946#0#HTML" expanded="true" />
+            <element signature="e#1631#1702#0#HTML" expanded="true" />
+            <element signature="e#1988#2044#0#HTML" expanded="true" />
+            <element signature="e#2139#2221#0#HTML" expanded="true" />
+            <element signature="e#2806#2857#0#HTML" expanded="true" />
+            <element signature="e#3252#3258#1#HTML" expanded="true" />
+            <element signature="e#3294#3300#1#HTML" expanded="true" />
+            <element signature="e#4515#4546#0#HTML" expanded="true" />
+            <element signature="e#4965#4985#0#HTML" expanded="true" />
+            <element signature="e#5246#5268#0#HTML" expanded="true" />
+            <element signature="e#5312#5333#0#HTML" expanded="true" />
+            <element signature="e#5504#5510#1#HTML" expanded="true" />
+            <element signature="e#5760#5766#1#HTML" expanded="true" />
+            <element signature="e#5798#5804#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/entra/construct_projects.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3961">
+          <caret line="315" column="23" lean-forward="true" selection-start-line="315" selection-start-column="23" selection-end-line="319" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/entra/construct_project_detail_one.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="89" column="18" lean-forward="true" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+          <folding>
+            <element signature="e#321#392#0#HTML" expanded="true" />
+            <element signature="e#678#734#0#HTML" expanded="true" />
+            <element signature="e#829#911#0#HTML" expanded="true" />
+            <element signature="e#1596#1667#0#HTML" expanded="true" />
+            <element signature="e#1953#2009#0#HTML" expanded="true" />
+            <element signature="e#2104#2186#0#HTML" expanded="true" />
+            <element signature="e#2770#2821#0#HTML" expanded="true" />
+            <element signature="e#3162#3168#1#HTML" expanded="true" />
+            <element signature="e#3192#3198#1#HTML" expanded="true" />
+            <element signature="e#3222#3228#1#HTML" expanded="true" />
+            <element signature="e#3252#3258#1#HTML" expanded="true" />
+            <element signature="e#3796#3802#0#HTML" expanded="true" />
+            <element signature="e#3802#3808#0#HTML" expanded="true" />
+            <element signature="e#3808#3814#0#HTML" expanded="true" />
+            <element signature="e#3814#3820#0#HTML" expanded="true" />
+            <element signature="e#3910#3916#0#HTML" expanded="true" />
+            <element signature="e#3916#3922#0#HTML" expanded="true" />
+            <element signature="e#3922#3928#0#HTML" expanded="true" />
+            <element signature="e#3928#3934#0#HTML" expanded="true" />
+            <element signature="e#4324#4330#0#HTML" expanded="true" />
+            <element signature="e#4330#4336#0#HTML" expanded="true" />
+            <element signature="e#4336#4342#0#HTML" expanded="true" />
+            <element signature="e#4342#4348#0#HTML" expanded="true" />
+            <element signature="e#4482#4488#0#HTML" expanded="true" />
+            <element signature="e#4488#4494#0#HTML" expanded="true" />
+            <element signature="e#4494#4500#0#HTML" expanded="true" />
+            <element signature="e#4500#4506#0#HTML" expanded="true" />
+            <element signature="e#4600#4606#0#HTML" expanded="true" />
+            <element signature="e#4606#4612#0#HTML" expanded="true" />
+            <element signature="e#4612#4618#0#HTML" expanded="true" />
+            <element signature="e#4618#4624#0#HTML" expanded="true" />
+            <element signature="e#5344#5375#0#HTML" expanded="true" />
+            <element signature="e#5790#5810#0#HTML" expanded="true" />
+            <element signature="e#6074#6096#0#HTML" expanded="true" />
+            <element signature="e#6144#6165#0#HTML" expanded="true" />
+            <element signature="e#6339#6345#1#HTML" expanded="true" />
+            <element signature="e#6626#6632#1#HTML" expanded="true" />
+            <element signature="e#6668#6674#1#HTML" expanded="true" />
+            <element signature="e#6710#6716#1#HTML" expanded="true" />
+            <element signature="e#6752#6758#1#HTML" expanded="true" />
+            <element signature="e#7365#7371#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

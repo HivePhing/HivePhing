@@ -313,6 +313,11 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
 
                                 @endif
                         @endif
+                        <div class="actions">
+                            <a href="{{url('entra/detail_project_without_request/'.$d->id)}}"
+                               class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See
+                            </a>
+                        </div>
                     </div>
                     <div class="portlet-body">
                         <div class="scroller" style="height:200px" data-rail-visible="1"

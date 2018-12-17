@@ -384,6 +384,13 @@ class ConstructprojectsController extends Controller
 
 
     }
+    public function detail_project_without_request($pid)
+    {
+        $projects_data = DB::connection('mysql_service')->table('for_repair')->where('id',$pid)->first();
+        return view('user.entra.detail_project_without_request', ['data' => $projects_data]);
+
+
+    }
 
     public function detail_invite_project($pid)
     {
