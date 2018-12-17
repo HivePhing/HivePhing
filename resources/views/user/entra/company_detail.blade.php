@@ -50,10 +50,8 @@
                     </div>
                     <div class="portlet-body">
                         <div class="scroller" style="height:200px">
-
                             <img src="{{asset('users/entro/photo/'.$d->logo)}}" width="152"
                                  style=" vertical-align: text-top;float:left;margin:9px;" alt="Logo Image">
-
                             </img><p> {{$d->description}} </p>
 
                         </div>

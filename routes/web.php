@@ -617,6 +617,8 @@ Route::get('usage',function(){
     return view('usage.projects');
 });
 Route::get('detail_without_auth/{id}','ConstructprojectsController@detail_without_auth');
+Route::get('entra/invite_com','ConstructprojectsController@invite_com');
+Route::get('entra/detail_invite_project/{id}','ConstructprojectsController@detail_invite_project');
 //end without_auth
 
 

@@ -80,65 +80,59 @@
                         HivePhing </h3>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-10 col-md-10">
-                <div class="col-xs-12 col-sm-12 col-md-10" style="color:white;text-align: center;">
-                    <div class="top_m col-md-6" style="">
-                        <div class="col-xs-4  col-sm-4 col-md-4">
-                        <div class="dropdown">
-                            <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
-                              <i class="icon-bell"></i>
-                              <span class="badge">3</span>
-                            </a>
-                            <div  class="dropdown-menu notifications">
-                            <ul role="menu" aria-labelledby="dLabel">
-                              <div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all</h4>
-                              </div>
-                              <li class="divider"></li>
-                             <div class="notifications-wrapper">
-                               <a class="content" href="#">
-                                 <div class="notification-item">
-                                  <h4 class="item-title">ေခါင္းစဥ္</h4>
-                                  <p class="item-info">စာသားနဲနဲ စာသားနဲနဲ စာသားနဲနဲ စာသားနဲနဲ</p>
-                                  <button>View</button>
-                                </div>
-                              </a>
-                               <a class="content" href="#">
-                                <div class="notification-item">
-                                  <h4 class="item-title">Title</h4>
-                                  <p class="item-info">A little Sar A little Sar A little Sar A little Sar</p>
-                                  <button>View</button>
-                                </div>
-                              </a>
-                               <a class="content" href="#">
-                                <div class="notification-item">
-                                  <h4 class="item-title">Title</h4>
-                                  <p class="item-info">စာသားနည္းနည္း စာသားနည္းနည္း စာသားနည္းနည္း စာသားနည္းနည္း </p>
-                                </div>
-                              </a>
-                             </div>
-                              <li class="divider"></li>
-                              <div class="notification-footer"><h4 class="menu-title">View all</i></h4></div>
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
-                        <div class="col-xs-4  col-sm-4 col-md-4"><a href="{{url('about_us')}}"
-                                                                    style="text-align: center;white-space: nowrap;color:white;font-weight:bolder;">About
-                                Us </a>
-                       <a href="{{url('business_news')}}"
-                                                                    style="text-align: center;white-space: nowrap;color:white;font-weight:bolder;">News</a>
-                        </div>
-                        <div class="col-xs-4">
-                            <button onclick="change_font('z')" class="btn btn-small btn-info " style="float:right;">zawgyi</button>
-                            <button onclick="change_font('u')" class="btn btn-small btn-warning green">Unicode</button>
-                        </div>
-
-                      
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-2">&nbsp;</div>
-
-            </div>
+            {{--<div class="col-xs-12 col-sm-10 col-md-10">--}}
+                {{--<div class="col-xs-12 col-sm-12 col-md-10" style="color:white;text-align: center;">--}}
+                    {{--<div class="top_m col-md-6" style="">--}}
+                        {{--<div class="col-xs-4  col-sm-4 col-md-4">--}}
+                        {{--<div class="dropdown">--}}
+                            {{--<a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">--}}
+                              {{--<i class="icon-bell"></i>--}}
+                              {{--<span class="badge">3</span>--}}
+                            {{--</a>--}}
+                            {{--<div  class="dropdown-menu notifications">--}}
+                            {{--<ul role="menu" aria-labelledby="dLabel">--}}
+                              {{--<div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all</h4>--}}
+                              {{--</div>--}}
+                              {{--<li class="divider"></li>--}}
+                             {{--<div class="notifications-wrapper">--}}
+                               {{--<a class="content" href="#">--}}
+                                 {{--<div class="notification-item">--}}
+                                  {{--<h4 class="item-title">ေခါင္းစဥ္</h4>--}}
+                                  {{--<p class="item-info">စာသားနဲနဲ စာသားနဲနဲ စာသားနဲနဲ စာသားနဲနဲ</p>--}}
+                                  {{--<button>View</button>--}}
+                                {{--</div>--}}
+                              {{--</a>--}}
+                               {{--<a class="content" href="#">--}}
+                                {{--<div class="notification-item">--}}
+                                  {{--<h4 class="item-title">Title</h4>--}}
+                                  {{--<p class="item-info">A little Sar A little Sar A little Sar A little Sar</p>--}}
+                                  {{--<button>View</button>--}}
+                                {{--</div>--}}
+                              {{--</a>--}}
+                               {{--<a class="content" href="#">--}}
+                                {{--<div class="notification-item">--}}
+                                  {{--<h4 class="item-title">Title</h4>--}}
+                                  {{--<p class="item-info">စာသားနည္းနည္း စာသားနည္းနည္း စာသားနည္းနည္း စာသားနည္းနည္း </p>--}}
+                                {{--</div>--}}
+                              {{--</a>--}}
+                             {{--</div>--}}
+                              {{--<li class="divider"></li>--}}
+                              {{--<div class="notification-footer"><h4 class="menu-title">View all</h4></div>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                        {{--<div class="col-xs-4  col-sm-4 col-md-4"><a href="{{url('about_us')}}" style="text-align: center;white-space: nowrap;color:white;font-weight:bolder;">About Us </a><a href="{{url('business_news')}}" style="text-align: center;white-space: nowrap;color:white;font-weight:bolder;">News</a>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-xs-4">--}}
+                            {{--<button onclick="change_font('z')" class="btn btn-small btn-info " style="float:right;">zawgyi</button>--}}
+                            {{--<button onclick="change_font('u')" class="btn btn-small btn-warning green">Unicode</button>--}}
+                        {{--</div>--}}
+                      {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="col-xs-12 col-sm-12 col-md-2">&nbsp;--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
         <div class="col-xs-12">
             <div class="topnavs" id="myTopnav">
@@ -177,12 +171,14 @@
                     }
                     else{
                     $link='company_register_form';
-
                     }
                 @endphp
                 <a href="{{url($link)}}">Company</a>
-                <a href="{{url('entra/upload_project')}}">Upload Project</a>
-                <a href="{{url('entra/add_form_for_paint')}}">Prices</a>
+
+                {{--<a href="{{url('entra/upload_project')}}">Upload Project</a>--}}
+
+                <a href="{{url('entra/invite_com')}}">Invitation</a>
+                {{--<a href="{{url('entra/add_form_for_paint')}}">Prices</a>--}}
                 <a href="{{url('entra/construct_projects')}}">Construct Projects</a>
                 {{--<div class="dropdowns">--}}
                     {{--<button class="dropbtns">Mail Inbox--}}
