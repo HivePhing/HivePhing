@@ -182,6 +182,7 @@
                 @endphp
                 <a href="{{url($link)}}">Company</a>
                 <a href="{{url('entra/upload_project')}}">Upload Project</a>
+                <a href="{{url('recommend')}}">Recommend</a>
                 <a href="{{url('entra/add_form_for_paint')}}">Prices</a>
                 <a href="{{url('entra/construct_projects')}}">Construct Projects</a>
                 {{--<div class="dropdowns">--}}

@@ -27,16 +27,16 @@ use Illuminate\Support\Facades\Validator;
 
 class EntroController extends Controller
 {
-        //
-        public function __construct()
-        {
-            $this->middleware('auth', ['except' => 'copy_photo_from_api']);
-            $this->middleware('block');
+    //
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'copy_photo_from_api']);
+        $this->middleware('block');
 
-            // $this->middleware('type', ['except' => ['other_company_detail','copy_photo_from_api']]);
-            $this->middleware('NeedToRegister', ['except' => ['company_register_form', 'copy_photo_from_api', 'company_register_form_two', 'company_register_form_three']]);
-            // $this->middleware('Plans',['except'=>['company_detail','index','company_register_form','company_register_form_two','copy_photo_from_api','company_register_form_three','company_register','company_edit_form','company_edit']]);
-        }
+        // $this->middleware('type', ['except' => ['other_company_detail','copy_photo_from_api']]);
+        $this->middleware('NeedToRegister', ['except' => ['company_register_form', 'copy_photo_from_api', 'company_register_form_two', 'company_register_form_three']]);
+        // $this->middleware('Plans',['except'=>['company_detail','index','company_register_form','company_register_form_two','copy_photo_from_api','company_register_form_three','company_register','company_edit_form','company_edit']]);
+    }
 
     public function index()
     {
@@ -141,8 +141,7 @@ class EntroController extends Controller
                 'investment' => 'required|numeric|min:1|max:2',
                 'registration_status' => 'required|numeric|min:1|max:2',
                 'description' => 'required|min:12|max:3330',
-                "logo"=>'required',
-//                'logo' => 'mimes:jpeg,bmp,png,jpg,gif'
+                'logo' => 'mimes:jpeg,bmp,png,jpg,gif'
             ]);
 
         if ($validator->fails()) {
@@ -231,7 +230,7 @@ class EntroController extends Controller
     {
         $old_data = Company::where('id', $request->id)->first();
         $validator = Validator::make($request->all(), ['name' => 'required|min:2|max:120', 'business_hub' => 'required|min:1|max:20', 'country_id' => 'required|numeric|min:1',
-            'city_id' => 'required|numeric', 'logo' => 'required', 'address' => 'required|max:1000',
+            'city_id' => 'required|numeric', 'logo' => 'mimes:jpeg,bmp,png,jpg,gif', 'address' => 'required|max:1000',
             'email' => 'required|email|unique:company,email,' . $request->id, 'phone' => 'required|numeric|digits_between:5,14',
             'website' => 'max:27',
             'facebook' => 'max:27',
@@ -243,13 +242,11 @@ class EntroController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         } else {
             if (!empty($request->file('logo'))) {
+                if (unlink($_SERVER['DOCUMENT_ROOT'] . '/companies/public/users/entro/photo/' . $old_data->logo)) {
 
-
-//                if (unlink($_SERVER['DOCUMENT_ROOT'] . '/companies/public/users/entro/photo/' . $old_data->logo)) {
-//
-//                } else {
-//                    return 'Cannot Delete';
-//                }
+                } else {
+                    return 'Cannot Delete';
+                }
                 $request->file('logo')->move(base_path() . '/public/users/entro/photo', Carbon::now()->timestamp . $request->file('logo')->getClientOriginalName());
                 $data_photo = Carbon::now()->timestamp . $request->file('logo')->getClientOriginalName();
             } else {
@@ -633,12 +630,6 @@ class EntroController extends Controller
         $inves = Invest::where([['user_id', '!=', Auth::user()->id,], ['business_hub_id', '=', $request->business_hub_id], ['country_id', '=', $request->country_id], ['city_id', '=', $request->city_id]])->get();
         return view('user.entra.search_result', ['com' => $com, 'asso' => $asso, 'inves' => $inves]);
 
-    }
-
-
-    public function upload_project()
-    {
-        return view('upload_project');
     }
 
 

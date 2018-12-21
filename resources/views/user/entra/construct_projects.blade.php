@@ -1,13 +1,9 @@
-<?php
-echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header("Cache-Control:post-check=0,pre-check=0", false);header("Pragma:no-cache");header('Content-Type:text/html');
-
-?>
 @extends('layouts.dashboard')
 
 @section('content')
-    <!-- BEGIN : LOGIN PAGE 5-1 -->
+<!-- BEGIN : LOGIN PAGE 5-1 -->
 @section('title')
-    Construct Project
+Construct Project
 @endsection
 @section('bg'){{asset('images/about_banner.jpg')}}@endsection
 @if(\Illuminate\Support\Facades\Session::has('no_auth'))
@@ -41,37 +37,6 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
     \Illuminate\Support\Facades\Session::forget('no_auth');
     ?>
 @endif
-@if(\Illuminate\Support\Facades\Session::has('ex'))
-    <div class="modal fade in" id="myModal" role="dialog" style="display: block; padding-left: 17px;background-color: #f1eaea96;">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" onclick="tohide()" class="close" data-dismiss="modal">×</button>
-                    <h4 style="font-weight:bolder;color:#32c5d2;font-size:27px;">Need to register or login</h4>
-                </div>
-                <div class="modal-body" style="font-size: 19px !important;
-    color: #4c4949cf;
-    font-weight: bolder;">
-                    This Project expired
-                </div>
-                <div class="modal-footer" style="">
-                    <button type="button" class="btn btn-default" onclick="tohide()" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <script>
-        function tohide() {
-            document.getElementById("myModal").style.display = 'none';
-        }
-    </script>
-    <?php
-    \Illuminate\Support\Facades\Session::forget('no_auth');
-    ?>
-@endif
 <div class="col-xs-12" style="background-color:#ddedf2;padding-bottom:22px;">
     <div class="col-xs-12" style="text-align: center;font-size:22px;font-weight:bolder;margin-top:12px;">Construct Projects
     </div>
@@ -83,7 +48,6 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
                     <div class="dashboard-stat2" style="padding-bottom:12px;padding: 0px 22px 8px;">
                         <div class="display">
                             <div class="number">
-
                                 <div>
                                     <h4 class="font-red-haze">
                                         <span pdata-counter="counterup" pdata-value="Your free-trial period">Your free-trial period</span>
@@ -231,10 +195,7 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
 
                                     <span style="color:#36c6d3;">Points</span>
                                     :
-                                    <?php
-                                    $rppoint= \Illuminate\Support\Facades\DB::table('company_with_plan')->where('com_id',$com_id->id)->first();
-                                    ?>
-                                    {{$rppoint->remaining_point}}
+                                    {{$plan->point}}
 
                                 </small>
                                 <br>
@@ -277,10 +238,17 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
 
                         <div class="caption">
                             <i class="fa fa-gift"></i>
-                            ID : {{$d->id}}
-
                         </div>
+                        <?php
+                        $see_project = DB::table('see_projects_with_plan')->where([['project_id', '=', $d->id], ['user_id', '=', Auth::user()->id]])->count();
+                        ?>
+                        @if($see_project != 0)
+                            <div class="actions">
 
+                                        <span class="label label-success"
+                                              style="border-radius:10px !important;"> Seen </span>
+                            </div>
+                        @endif
                         @if($d->close == 1)
                             <div class="actions">
                                 <a class="btn btn-danger btn-sm" disabled> <i class="fa fa-cross"></i> Expired
@@ -288,30 +256,47 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
                             </div>
                         @else
                             <?php
-                            $see_project = DB::connection('mysql_service')->table('request')->where([['post_id', '=', $d->id], ['requester_id', '=', Auth::user()->id]]);
-                            ?>
-                            @if($see_project->count() > 0)
-                                @if($see_project->first()->status == 'rq')
-                                    <div class="actions">
-                                        <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
-                                           class="btn btn-default btn-sm"> <i class="fa fa-search"></i> Request
-                                        </a>
-                                    </div>
-                                @elseif($see_project->first()->status == 'con')
-                                    <div class="actions">
-                                        <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
-                                           class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See
-                                        </a>
-                                    </div>
-                                @endif
-                                @else
-                                    <div class="actions">
-                                        <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
-                                           class="btn btn-default btn-sm"> <i class="fa fa-search"></i> Request
-                                        </a>
-                                    </div>
+                            $limit_q = DB::table('user_saw_this_plan')->where('project_id', $d->id)->count();
 
-                                @endif
+                            if($limit_q >= $d->quotation)
+                            {
+                            $user_saw_this = DB::table('user_saw_this_plan')->where([['project_id', '=', $d->id], ['user_id', Auth::user()->id]])->count();
+
+                            if($user_saw_this > 0)
+                            {
+                            ?>
+                            <div class="actions">
+                                <a href="{{url('entra/construct_project_detail/'.$d->id)}}"
+                                   class="btn btn-default btn-sm"> <i class="fa fa-search"></i> View More
+                                </a>
+                            </div>
+                            <?php
+                            }else{
+                            ?>
+                            <div class="actions">
+                                <a class="btn btn-danger btn-sm" disabled> <i class="fa fa-cross"></i> Expired
+                                </a>
+                            </div>
+                            <?php
+
+                            }
+
+
+                            }
+                            else
+                            {
+                            ?>
+                            <div class="actions">
+                                <a href="{{url('entra/construct_project_detail/'.$d->id)}}"
+                                   class="btn btn-default btn-sm"> <i class="fa fa-search"></i> View More
+                                </a>
+                            </div>
+
+                            <?php
+
+                            }
+                            ?>
+
                         @endif
                     </div>
                     <div class="portlet-body">
