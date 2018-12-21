@@ -75,7 +75,8 @@
                     }
                 @endphp
                 <a href="{{url($link)}}">Company</a>
-                <a href="{{url('entra/add_form_for_paint')}}">Prices</a>
+                <a href="{{url('entra/invite_com')}}">Invitation</a>
+                {{--<a href="{{url('entra/add_form_for_paint')}}">Prices</a>--}}
                 <a href="{{url('entra/construct_projects')}}">Construct Projects</a>
                 {{--<div class="dropdowns">--}}
                     {{--<button class="dropbtns">Mail Inbox--}}
