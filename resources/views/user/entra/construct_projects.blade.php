@@ -1,13 +1,9 @@
-<?php
-echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header("Cache-Control:post-check=0,pre-check=0", false);header("Pragma:no-cache");header('Content-Type:text/html');
-
-?>
 @extends('layouts.dashboard')
 
 @section('content')
-    <!-- BEGIN : LOGIN PAGE 5-1 -->
+<!-- BEGIN : LOGIN PAGE 5-1 -->
 @section('title')
-    Construct Project
+Construct Project
 @endsection
 @section('bg'){{asset('images/about_banner.jpg')}}@endsection
 @if(\Illuminate\Support\Facades\Session::has('no_auth'))
@@ -42,6 +38,7 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
     \Illuminate\Support\Facades\Session::forget('no_auth');
     ?>
 @endif
+<<<<<<< HEAD
 @if(\Illuminate\Support\Facades\Session::has('ex'))
     <div class="modal fade in" id="myModal" role="dialog"
          style="display: block; padding-left: 17px;background-color: #f1eaea96;">
@@ -74,6 +71,8 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
     \Illuminate\Support\Facades\Session::forget('no_auth');
     ?>
 @endif
+=======
+>>>>>>> e708884ab284d96bf16c1132040e4097f4b6f86e
 <div class="col-xs-12" style="background-color:#ddedf2;padding-bottom:22px;">
     <div class="col-xs-12" style="text-align: center;font-size:22px;font-weight:bolder;margin-top:12px;">Construct
         Projects
@@ -86,7 +85,6 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
                     <div class="dashboard-stat2" style="padding-bottom:12px;padding: 0px 22px 8px;">
                         <div class="display">
                             <div class="number">
-
                                 <div>
                                     <h4 class="font-red-haze">
                                         <span pdata-counter="counterup" pdata-value="Your free-trial period">Your free-trial period</span>
@@ -230,10 +228,14 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
 
                                     <span style="color:#36c6d3;">Points</span>
                                     :
+<<<<<<< HEAD
                                     <?php
                                     $rppoint = \Illuminate\Support\Facades\DB::table('company_with_plan')->where('com_id', $com_id->id)->first();
                                     ?>
                                     {{$rppoint->remaining_point}}
+=======
+                                    {{$plan->point}}
+>>>>>>> e708884ab284d96bf16c1132040e4097f4b6f86e
 
                                 </small>
                                 <br>
@@ -276,10 +278,17 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
 
                         <div class="caption">
                             <i class="fa fa-gift"></i>
-                            ID : {{$d->id}}
-
                         </div>
+                        <?php
+                        $see_project = DB::table('see_projects_with_plan')->where([['project_id', '=', $d->id], ['user_id', '=', Auth::user()->id]])->count();
+                        ?>
+                        @if($see_project != 0)
+                            <div class="actions">
 
+                                        <span class="label label-success"
+                                              style="border-radius:10px !important;"> Seen </span>
+                            </div>
+                        @endif
                         @if($d->close == 1)
                             <div class="actions">
                                 <a class="btn btn-danger btn-sm" disabled> <i class="fa fa-cross"></i> Expired
@@ -287,8 +296,37 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
                             </div>
                         @else
                             <?php
-                            $see_project = DB::connection('mysql_service')->table('request')->where([['post_id', '=', $d->id], ['requester_id', '=', Auth::user()->id]]);
+                            $limit_q = DB::table('user_saw_this_plan')->where('project_id', $d->id)->count();
+
+                            if($limit_q >= $d->quotation)
+                            {
+                            $user_saw_this = DB::table('user_saw_this_plan')->where([['project_id', '=', $d->id], ['user_id', Auth::user()->id]])->count();
+
+                            if($user_saw_this > 0)
+                            {
                             ?>
+                            <div class="actions">
+                                <a href="{{url('entra/construct_project_detail/'.$d->id)}}"
+                                   class="btn btn-default btn-sm"> <i class="fa fa-search"></i> View More
+                                </a>
+                            </div>
+                            <?php
+                            }else{
+                            ?>
+                            <div class="actions">
+                                <a class="btn btn-danger btn-sm" disabled> <i class="fa fa-cross"></i> Expired
+                                </a>
+                            </div>
+                            <?php
+
+                            }
+
+
+                            }
+                            else
+                            {
+                            ?>
+
                             @if($see_project->count() > 0)
                                 @if($see_project->first()->status == 'rq')
 
@@ -335,6 +373,26 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
                                    class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See
                                 </a>
                             </div>
+                            {{--conflit--}}
+{{--=======--}}
+                            {{--<div class="actions">--}}
+                                {{--<a href="{{url('entra/construct_project_detail/'.$d->id)}}"--}}
+                                   {{--class="btn btn-default btn-sm"> <i class="fa fa-search"></i> View More--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+
+                            {{--<?php--}}
+
+                            {{--}--}}
+                            {{--?>--}}
+
+                        {{--@endif--}}
+                        {{--<div class="actions">--}}
+                            {{--<a href="{{url('entra/detail_project_without_request/'.$d->id)}}"--}}
+                               {{--class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
+{{-->>>>>>> e708884ab284d96bf16c1132040e4097f4b6f86e--}}
                     </div>
                     <div class="portlet-body">
                         <div class="scroller" style="height:200px" data-rail-visible="1"

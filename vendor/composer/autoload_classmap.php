@@ -6,6 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+<<<<<<< HEAD
+=======
+    'CreateBuildingTypesTable' => $baseDir . '/database/migrations/2018_12_20_052144_create_building_types_table.php',
+    'CreateCountGuestsTable' => $baseDir . '/database/migrations/2018_12_19_050127_create_count_guests_table.php',
+    'CreatePaintingItemsTable' => $baseDir . '/database/migrations/2018_12_20_064614_create_painting_items_table.php',
+>>>>>>> e708884ab284d96bf16c1132040e4097f4b6f86e
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
@@ -464,6 +470,10 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
+<<<<<<< HEAD
+=======
+    'RoomTypes' => $baseDir . '/database/migrations/2018_12_20_081156_room_types.php',
+>>>>>>> e708884ab284d96bf16c1132040e4097f4b6f86e
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
     'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
     'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Driver.php',

@@ -401,6 +401,12 @@ class ComposerStaticInit964bec096b54258a1247a82489f93e5d
     );
 
     public static $classMap = array (
+<<<<<<< HEAD
+=======
+        'CreateBuildingTypesTable' => __DIR__ . '/../..' . '/database/migrations/2018_12_20_052144_create_building_types_table.php',
+        'CreateCountGuestsTable' => __DIR__ . '/../..' . '/database/migrations/2018_12_19_050127_create_count_guests_table.php',
+        'CreatePaintingItemsTable' => __DIR__ . '/../..' . '/database/migrations/2018_12_20_064614_create_painting_items_table.php',
+>>>>>>> e708884ab284d96bf16c1132040e4097f4b6f86e
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
@@ -859,6 +865,10 @@ class ComposerStaticInit964bec096b54258a1247a82489f93e5d
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+<<<<<<< HEAD
+=======
+        'RoomTypes' => __DIR__ . '/../..' . '/database/migrations/2018_12_20_081156_room_types.php',
+>>>>>>> e708884ab284d96bf16c1132040e4097f4b6f86e
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
