@@ -328,7 +328,7 @@ class ConstructprojectsController extends Controller
 
     public function send_message(Request $request)
     {
-        $success = DB::connection('mysql_service')->table('message')->insert(['post_id' => $request->post_id, 'from_user' => 'com', 'user_id' => $request->user_id, 'com_id' => $request->com_id, 'message' => $request->message, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+        $success = DB::connection('mysql_service')->table('message')->insert(['post_id' => $request->post_id, 'from_user' => 'com', 'user_id' => $user_id, 'com_id' => $request->com_id, 'message' => $request->message, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
         $com_data = DB::table('company')->where('user_id', '=', Auth::user()->id)->first();
         $pdata = DB::connection('mysql_service')->table('for_repair')->where('id', $request->post_id)->first();
         DB::connection('mysql_service')->table('relation_com_and_user')->insert(['com_id' => $request->com_id, 'post_id' => $request->post_id, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
@@ -384,9 +384,10 @@ class ConstructprojectsController extends Controller
 
 
     }
+
     public function detail_project_without_request($pid)
     {
-        $projects_data = DB::connection('mysql_service')->table('for_repair')->where('id',$pid)->first();
+        $projects_data = DB::connection('mysql_service')->table('for_repair')->where('id', $pid)->first();
         return view('user.entra.detail_project_without_request', ['data' => $projects_data]);
 
 
@@ -394,11 +395,72 @@ class ConstructprojectsController extends Controller
 
     public function detail_invite_project($pid)
     {
-        $id=$pid;
+        $id = $pid;
+
+        $user_id = Auth::user()->id;
+        $get_user_free_plan = DB::table('user_get_free_plan')->where('user_id', $user_id)->first();
+        $get_project_data = DB::connection('mysql_service')->table('for_repair')->where('id', $user_id)->first();
+        $com_data = DB::table('company')->where('user_id', $user_id)->first();
+        $data = DB::connection('mysql_service')->table('for_repair')->where('id', $id)->first();
+        //get user's free plan
+        if ($data->project_define_point != 0) {
+            if ($get_user_free_plan->end_date >= Carbon::now()) {
+                //user's free plan is not expire
+                $total_free_and_bonus = $get_user_free_plan->remaining_point + $get_user_free_plan->increase_point;
+                //sum remain point and increase point
+                if ($get_user_free_plan->remaining_point >= $get_project_data->project_define_point) {
+                    //if rpoint is enough
+                    $new_remaining_point = $get_user_free_plan->remaining_point - $get_project_data->project_define_point;
+                    $new_increase_point = $get_user_free_plan->increase_point;
+
+                } elseif ($total_free_and_bonus >= $get_project_data->project_define_point) {
+                    //if not rpoint is not enough but total total point is enough
+                    $new_remaining_point = 0;
+                    $new_increase_point = $total_free_and_bonus - $get_project_data->project_define_point;
+                } else {
+                    DB::connection('mysql_service')->table('request')->where([['post_id', '=', $pid], ['requester_id', '=', $user_id]])->update(['status' => 'rq']);
+                    return response()->json(['data' => $pid]);
+                }
+                //you will save to database for free plan
+                $new_see_point = $get_user_free_plan->see_point + 1;
+
+                DB::table('user_get_free_plan')->where('user_id', $user_id)->update(['remaining_point' => $new_remaining_point, 'increase_point' => $new_increase_point, 'see_point' => $new_see_point]);
+
+
+            } else {
+                //if user's free plan is expire
+
+                $get_user_plan = DB::table('company_with_plan')->where('com_id', $com_data->id);
+                //get user's plan data
+                if ($get_user_plan->count() > 0) {
+                    //check user have plan
+                    if ($get_user_plan->first()->remaining_point >= $get_project_data->project_define_point) {
+                        $new_plan_rem = $get_user_plan->first()->remaining_point - $get_project_data->project_define_point;
+                        DB::table('company_with_plan')->where('com_id', $com_data->id)->update(['remaining_point' => $new_plan_rem]);
+
+
+                    } else {
+                        DB::connection('mysql_service')->table('request')->where([['post_id', '=', $pid], ['requester_id', '=', $user_id]])->update(['status' => 'rq']);
+                        return response()->json(['data' => $pid]);
+                    }
+                } else {
+                    //user didnt buy plan
+                    DB::connection('mysql_service')->table('request')->where([['post_id', '=', $pid], ['requester_id', '=', $user_id]])->update(['status' => 'rq']);
+                    Session::flash('error', 'You have no plan');
+                    return redirect()->back();
+                }
+
+
+            }
+            if (DB::table('request')->where([['post_id', '=', $pid], ['requester_id', '=', $user_id]])->update(['status' => 'con'])) {
+
+            }
+        }
+
+
         $com_id = DB::table('company')->where('user_id', Auth::user()->id)->first();
 
         $user_id = Auth::user()->id;
-        $data = DB::connection('mysql_service')->table('for_repair')->where('id',$id)->first();
         $cname = DB::table('cities')->where('id', $data->city)->first();
         $sname = DB::table('states')->where('id', $data->state)->first();
         $data->cname = $cname->name;
@@ -448,8 +510,9 @@ class ConstructprojectsController extends Controller
         }
         $message_data = DB::connection('mysql_service')->table('message')->where([['post_id', '=', $id], ['com_id', '=', $com_id->id]])->orderBy('created_at', 'desc')->get();
 //      return response()->json(['data' => $data, 'fmessage' => $fmsg, 'tmessage' => $tmsg, 'rq_count' => $get_request_count->count(), 'requested_com' => $all_grc, 'all_rec' => $all_rec]);
-        return view('user.entra.invite_project_detail',['data' => $data, 'fmessage' => $fmsg, 'tmessage' => $tmsg]);
+        return view('user.entra.invite_project_detail', ['data' => $data, 'fmessage' => $fmsg, 'tmessage' => $tmsg]);
     }
+
     ####### **** REQUESTER SIDE ***COMPANY SIDE**** #######
     public function get_all_accepted_projects()
     {

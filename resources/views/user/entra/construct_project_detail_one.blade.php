@@ -88,7 +88,7 @@
             <div class="alert alert-success">
                 Sucessfully requested for this project
             </div>
-        <h1 class="page-title page_title">
+            <h1 class="page-title page_title">
             Project Detail <span class="pannel-title">Upload By
                 @php
                     $user=DB::connection('mysql_service')->table('users')->where('id',$data->user_id)->first();

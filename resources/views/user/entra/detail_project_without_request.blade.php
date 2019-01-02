@@ -119,12 +119,9 @@
                         <!-- BEGIN Portlet PORTLET-->
                         <div class="col-md-12" style="background-color:white;">
                             <div class="portlet-title">
-
                                 {{--<div class="caption">--}}
                                 {{--<i class="fa fa-gift"></i>--}}
                                 {{--</div>--}}
-
-
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="col-xs-12 col-sm-12 col-md-12" style="height:auto;">

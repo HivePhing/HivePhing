@@ -75,6 +75,15 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
     ?>
 @endif
 <div class="col-xs-12" style="background-color:#ddedf2;padding-bottom:22px;">
+    <br>
+    <br>
+    <br>
+        @if(\Illuminate\Support\Facades\Session::has('error'))
+        <div class="alert alert-danger" style="text-align: center;font-weigth:bold;">
+            {{\Illuminate\Support\Facades\Session::get('error')}}
+        </div>
+        @endif
+
     <div class="col-xs-12" style="text-align: center;font-size:22px;font-weight:bolder;margin-top:12px;">Invite Projects
     </div>
 
@@ -82,6 +91,7 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
 
 
     <div class="col-xs-12">
+
         @foreach($data as $dd)
             <?php
             $project = \Illuminate\Support\Facades\DB::connection('mysql_service')->table('for_repair')->where('id', $dd->post_id)->get();
@@ -106,11 +116,47 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
                                 </div>
                             @else
 
-                                <div class="actions">
-                                    <a href="{{url('entra/detail_invite_project/'.$d->id)}}"
-                                       class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See
-                                    </a>
-                                </div>
+                                <?php
+                                $see_project = DB::connection('mysql_service')->table('request')->where([['post_id', '=', $d->id], ['requester_id', '=', Auth::user()->id]]);
+                                ?>
+                                @if($see_project->count() > 0)
+                                    @if($see_project->first()->status == 'rq')
+
+                                        <div class="actions">
+                                            <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
+                                               class="btn btn-default btn-sm"> <i class="fa fa-search"></i> Requested
+                                            </a>
+                                        </div>
+                                            <div class="actions">
+                                                <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
+                                                   class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See
+                                                </a>
+                                            </div>
+                                    @elseif($see_project->first()->status == 'con')
+                                            <div class="actions">
+                                                <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
+                                                   class="btn btn-default btn-sm"> <i class="fa fa-search"></i> Confirmed
+                                                </a>
+                                            </div>
+                                        <div class="actions">
+                                                       <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
+                                               class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See
+                                            </a>
+                                        </div>
+                                    @endif
+                                @else
+                                    <div class="actions">
+                                        <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
+                                           class="btn btn-default btn-sm"> <i class="fa fa-search"></i> Request
+                                        </a>
+                                    </div>
+                                        <div class="actions">
+                                            <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
+                                               class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See
+                                            </a>
+                                        </div>
+
+                                @endif
 
                             @endif
                         </div>

@@ -78,7 +78,7 @@ class RegisterController extends Controller
                 'type'=>$data['type'],
             ]);
          $free_plan_data=FreePlan::where('id',1)->first();
-         DB::table('user_block')->insert(['user_id'=>$current_user_data->id,'admin_id'=>6,'circum'=>'block','created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
+         DB::table('user_block')->insert(['user_id'=>$current_user_data->id,'admin_id'=>6,'circum'=>'unblock','created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]);
          Freeplanforuser::create(['user_id'=>$current_user_data->id,'start_date'=>Carbon::now(),'free_plan_id'=>1,'see_point'=>0,'increase_point'=>0,'remaining_point'=>$free_plan_data->amount,'end_date'=>Carbon::now()->addMonth(1)]);
 
         return $current_user_data;

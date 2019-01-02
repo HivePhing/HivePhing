@@ -11,7 +11,8 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
 @endsection
 @section('bg'){{asset('images/about_banner.jpg')}}@endsection
 @if(\Illuminate\Support\Facades\Session::has('no_auth'))
-    <div class="modal fade in" id="myModal" role="dialog" style="display: block; padding-left: 17px;background-color: #f1eaea96;">
+    <div class="modal fade in" id="myModal" role="dialog"
+         style="display: block; padding-left: 17px;background-color: #f1eaea96;">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -42,7 +43,8 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
     ?>
 @endif
 @if(\Illuminate\Support\Facades\Session::has('ex'))
-    <div class="modal fade in" id="myModal" role="dialog" style="display: block; padding-left: 17px;background-color: #f1eaea96;">
+    <div class="modal fade in" id="myModal" role="dialog"
+         style="display: block; padding-left: 17px;background-color: #f1eaea96;">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -73,7 +75,8 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
     ?>
 @endif
 <div class="col-xs-12" style="background-color:#ddedf2;padding-bottom:22px;">
-    <div class="col-xs-12" style="text-align: center;font-size:22px;font-weight:bolder;margin-top:12px;">Construct Projects
+    <div class="col-xs-12" style="text-align: center;font-size:22px;font-weight:bolder;margin-top:12px;">Construct
+        Projects
     </div>
     <div class="col-xs-12">
         @if(\Carbon\Carbon::parse(Auth::user()->created_at)->addDays(30) > \Carbon\Carbon::now())
@@ -215,15 +218,11 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
                         <div class="number">
                             <div>
                                 <h4 class="font-red-haze">
-                                    <span pdata-counter="counterup" pdata-value="Your free-trial period">Your Plans</span>
+                                    <span pdata-counter="counterup"
+                                          pdata-value="Your free-trial period">Your Plans</span>
                                     @if($plan->type == 'C')
-
-
-
                                         <small>Remaining Days
                                             :{{\Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($plan->expire_date))}}</small>
-
-
                                     @endif
                                 </h4>
 
@@ -232,7 +231,7 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
                                     <span style="color:#36c6d3;">Points</span>
                                     :
                                     <?php
-                                    $rppoint= \Illuminate\Support\Facades\DB::table('company_with_plan')->where('com_id',$com_id->id)->first();
+                                    $rppoint = \Illuminate\Support\Facades\DB::table('company_with_plan')->where('com_id', $com_id->id)->first();
                                     ?>
                                     {{$rppoint->remaining_point}}
 
@@ -292,32 +291,50 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
                             ?>
                             @if($see_project->count() > 0)
                                 @if($see_project->first()->status == 'rq')
+
                                     <div class="actions">
                                         <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
-                                           class="btn btn-default btn-sm"> <i class="fa fa-search"></i> Request
+                                           class="btn btn-default btn-sm"> <i class="fa fa-search"></i> Requested
                                         </a>
                                     </div>
+
                                 @elseif($see_project->first()->status == 'con')
                                     <div class="actions">
                                         <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
-                                           class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See
-                                        </a>
-                                    </div>
-                                @endif
-                                @else
-                                    <div class="actions">
-                                        <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
-                                           class="btn btn-default btn-sm"> <i class="fa fa-search"></i> Request
+                                           class="btn btn-default btn-sm"> <i class="fa fa-search"></i> Confirmed
                                         </a>
                                     </div>
 
                                 @endif
-                        @endif
-                        <div class="actions">
-                            <a href="{{url('entra/detail_project_without_request/'.$d->id)}}"
-                               class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See
-                            </a>
-                        </div>
+                            @else
+                                <?php
+                                $fp = DB::table('user_get_free_plan')->where('user_id', Auth::user()->id);
+                                if ($fp->count() > 0) {
+                                    $fp_point = 1;
+                                }
+                                $pp = DB::table('company_with_plan')->where('com_id', $com_id->id);
+                                if ($pp->count() > 0) {
+                                    $pp_point = 1;
+                                }
+                                ?>
+
+                                @if(($fp_point > 0) or ($pp_point > 0))
+                                    <div class="actions">
+                                        <a href="{{url('entra/construct_project_detail_one/'.$d->id)}}"
+                                           class="btn btn-default btn-sm"> <i class="fa fa-search"></i> Request
+                                        </a>
+                                    </div>
+                                @endif
+
+
+
+
+                            @endif
+                            <div class="actions">
+                                <a href="{{url('entra/detail_project_without_request/'.$d->id)}}"
+                                   class="btn btn-default btn-sm"> <i class="fa fa-search"></i> See
+                                </a>
+                            </div>
                     </div>
                     <div class="portlet-body">
                         <div class="scroller" style="height:200px" data-rail-visible="1"
@@ -329,13 +346,7 @@ echo header("Cache-Control:no-store,no-cache,must-revalidate,max-age=0");header(
                             <br/>
                             {{ strip_tags(str_limit($d->description,140)) }}
                         </div>
-                        <span class="badge badge-danger">
-                                   <?php
-                            $comp = DB::table('user_saw_this_plan')->where([['project_id', '=', $d->id]])->count();
-
-                            ?>
-                            {{$comp}}
-                                </span> <strong style="color:#67809f;">Competitors</strong> &nbsp;&nbsp; &nbsp;&nbsp;
+                        <strong style="color:#67809f;">Competitors</strong> &nbsp;&nbsp; &nbsp;&nbsp;
 
                         <strong style="color:#67809f;">Post Date : {{$d->created_at}}</strong>
 
