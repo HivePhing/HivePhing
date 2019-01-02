@@ -228,14 +228,14 @@ Construct Project
 
                                     <span style="color:#36c6d3;">Points</span>
                                     :
-<<<<<<< HEAD
+{{--<<<<<<< HEAD--}}
                                     <?php
                                     $rppoint = \Illuminate\Support\Facades\DB::table('company_with_plan')->where('com_id', $com_id->id)->first();
                                     ?>
                                     {{$rppoint->remaining_point}}
-=======
-                                    {{$plan->point}}
->>>>>>> e708884ab284d96bf16c1132040e4097f4b6f86e
+{{--=======--}}
+                                    {{--{{$plan->point}}--}}
+{{-->>>>>>> e708884ab284d96bf16c1132040e4097f4b6f86e--}}
 
                                 </small>
                                 <br>
